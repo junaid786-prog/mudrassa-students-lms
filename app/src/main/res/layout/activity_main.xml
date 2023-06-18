@@ -6,13 +6,46 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <LinearLayout
+        android:id="@+id/linear_layout_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/add_student"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Add Student" />
+
+        <Button
+            android:id="@+id/show_students"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Show Students" />
+
+        <Button
+            android:id="@+id/insert_std_record_btn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Insert Record" />
+
+        <Button
+            android:id="@+id/student_record"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Student Record" />
+
+        <Button
+            android:id="@+id/visit_github_btn"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Visit Github" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

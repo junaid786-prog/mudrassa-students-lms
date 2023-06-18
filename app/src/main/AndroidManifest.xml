@@ -12,6 +12,12 @@
         android:theme="@style/Theme.Studentlms"
         tools:targetApi="31">
         <activity
+            android:name=".InsertDailyTask"
+            android:exported="false" />
+        <activity
+            android:name=".AddStudent"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

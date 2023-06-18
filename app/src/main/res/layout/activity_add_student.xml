@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddStudent">
+
+    <LinearLayout
+        android:id="@+id/layout_add_student"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/student_info_form"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/student_info_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoText="false"
+                android:gravity="center"
+                android:text="ADD STUDENT" />
+
+            <EditText
+                android:id="@+id/student_rollno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Enter Rollno" />
+
+            <EditText
+                android:id="@+id/student_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName|text"
+                android:text="Enter Name" />
+
+            <EditText
+                android:id="@+id/student_age"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Enter Age" />
+
+            <Button
+                android:id="@+id/add_student_action"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ADD STUDENT" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
