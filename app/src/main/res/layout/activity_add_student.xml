@@ -29,38 +29,41 @@
                 android:id="@+id/student_info_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="30"
                 android:autoText="false"
                 android:gravity="center"
-                android:text="ADD STUDENT" />
+                android:text="ADD STUDENT"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/student_rollno"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Enter Rollno" />
+                android:hint="Enter Roll no"
+                android:inputType="textPersonName" />
 
             <EditText
                 android:id="@+id/student_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName|text"
-                android:text="Enter Name" />
+                android:hint="Enter Name"
+                android:inputType="textPersonName|text" />
 
             <EditText
                 android:id="@+id/student_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Enter Age" />
+                android:hint="Enter Age"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/add_student_action"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="ADD STUDENT" />
         </LinearLayout>
     </LinearLayout>
