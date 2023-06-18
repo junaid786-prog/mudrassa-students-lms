@@ -29,7 +29,7 @@ public class DBHelper extends SQLiteOpenHelper {
         String sql = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "("
                 + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_NAME + " TEXT,"
-                + COLUMN_ROLLNO + " TEXT,"
+                + COLUMN_ROLLNO + " TEXT UNIQUE,"
                 + COLUMN_AGE + " INTEGER"
                 + ")";
         db.execSQL(sql);
@@ -61,17 +61,6 @@ public class DBHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(sql, null);
 
-        /*
-        * if (cursorCourses.moveToFirst()) {
-            do {
-
-                studentArrayList.add(new StudentModel(cursorCourses.getString(1),
-                      cursorCourses.getInt(2),
-                        cursorCourses.getInt(3) == 1 ? true : false));
-            } while (cursorCourses.moveToNext());
-
-        }
-        * */
         if (cursor.moveToFirst()) {
             do {
                 @SuppressLint("Range") int id = cursor.getInt(cursor.getColumnIndex(COLUMN_ID));
