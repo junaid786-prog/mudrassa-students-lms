@@ -15,6 +15,7 @@ class StudentRecyclerViewAdapter extends RecyclerView.Adapter<StudentRecyclerVie
 
     List<Student> studentsList;
     public StudentRecyclerViewAdapter(List<Student> studentsList) {
+        System.out.println(studentsList);
         this.studentsList = studentsList;
     }
 
@@ -32,8 +33,7 @@ class StudentRecyclerViewAdapter extends RecyclerView.Adapter<StudentRecyclerVie
         holder.data=studentsList.get(position);
         holder.textViewStudentName.setText(holder.data.getName());
         holder.textViewStudentRollNo.setText(String.valueOf(holder.data.getRollNo()));
-        //holder.imageViewFriend.setImageResource(holder.data.getImageId());
-        holder.textViewStudentAge.setText(holder.data.getAge());
+        holder.textViewStudentAge.setText(String.valueOf(holder.data.getAge()));
     }
 
     @Override
@@ -43,14 +43,12 @@ class StudentRecyclerViewAdapter extends RecyclerView.Adapter<StudentRecyclerVie
 
 
     public class MyVH extends RecyclerView.ViewHolder {
-        ImageView imageViewFriend;
         TextView textViewStudentName;
         TextView textViewStudentRollNo;
         TextView textViewStudentAge;
         Student data;
         public MyVH(@NonNull View itemView) {
             super(itemView);
-            imageViewFriend = itemView.findViewById(R.id.student_image_view);
             textViewStudentName = itemView.findViewById(R.id.student_card_name_field);
             textViewStudentRollNo = itemView.findViewById(R.id.student_card_rollno_field);
             textViewStudentAge = itemView.findViewById(R.id.student_card_age_field);
