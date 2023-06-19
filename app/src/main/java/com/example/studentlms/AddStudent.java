@@ -3,11 +3,14 @@ package com.example.studentlms;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteConstraintException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 
 public class AddStudent extends AppCompatActivity {
@@ -35,12 +38,16 @@ public class AddStudent extends AppCompatActivity {
                     ageValue = Integer.parseInt(age.getText().toString());
                     Student student = new Student(nameValue, ageValue, rollNoValue);
                     db.insertStudent(student);
-                    Toast.makeText(AddStudent.this, "Student created successfully", Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(AddStudent.this, MainActivity.class);
-                    startActivity(intent);
-                } catch (Exception e){
+                }
+                catch (SQLiteConstraintException exc){
+                    Toast.makeText(AddStudent.this, "Roll no already taken", Toast.LENGTH_LONG).show();
+                }
+                catch (Exception e){
                     Toast.makeText(AddStudent.this, "Enter right age", Toast.LENGTH_LONG).show();
                 }
+                Toast.makeText(AddStudent.this, "Student created successfully", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(AddStudent.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }

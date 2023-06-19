@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteConstraintException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -41,14 +42,13 @@ public class DBHelper extends SQLiteOpenHelper {
         db.execSQL(sql);
         onCreate(db);
     }
-    public void insertStudent(Student student){
+    public void insertStudent(Student student) throws SQLiteConstraintException{
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_NAME, student.getName());
         values.put(COLUMN_ROLLNO, student.getRollNo());
         values.put(COLUMN_AGE, student.getAge());
-
         db.insert(TABLE_NAME, null, values);
         db.close();
     }
