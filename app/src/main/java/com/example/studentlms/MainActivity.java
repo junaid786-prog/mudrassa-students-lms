@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button addStudent = findViewById(R.id.add_student);
         Button showStudents = findViewById(R.id.show_students);
+        Button insertStudent = findViewById(R.id.insert_std_record_btn);
+
         addStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -27,6 +29,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent moveActivity = new Intent(MainActivity.this, ShowStudents.class);
+                startActivity(moveActivity);
+            }
+        });
+
+        insertStudent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent moveActivity = new Intent(MainActivity.this, InsertDailyTask.class);
                 startActivity(moveActivity);
             }
         });
