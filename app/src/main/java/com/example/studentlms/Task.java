@@ -7,9 +7,9 @@ public class Task {
     private String sabaq;
     private String sabaqi;
     private String manzil;
-    private Date date;
+    private String date;
 
-    public Task(String rollNo, String sabaq, String sabaqi, String manzil, Date date) {
+    public Task(String rollNo, String sabaq, String sabaqi, String manzil, String date) {
         this.rollNo = rollNo;
         this.sabaq = sabaq;
         this.sabaqi = sabaqi;
@@ -33,7 +33,7 @@ public class Task {
         return manzil;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -53,7 +53,7 @@ public class Task {
         this.manzil = manzil;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

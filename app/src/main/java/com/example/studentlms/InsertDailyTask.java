@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class InsertDailyTask extends AppCompatActivity {
 
     // temp
-
+    TaskDBHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +27,10 @@ public class InsertDailyTask extends AppCompatActivity {
                 String sabaq = sabaqView.getText().toString();
                 String sabaqi = sabaqiView.getText().toString();
                 String manzal = manzalView.getText().toString();
+                String currentDate = db.getCurrentDate();
 
-                System.out.println(sabaq + " " + sabaqi + " " + manzal);
+                Task task = new Task(rollNo, sabaq, sabaqi, manzal, currentDate);
+                db.insertTask(task);
             }
         });
     }

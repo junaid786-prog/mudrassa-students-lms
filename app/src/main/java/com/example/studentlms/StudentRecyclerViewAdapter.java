@@ -15,7 +15,6 @@ class StudentRecyclerViewAdapter extends RecyclerView.Adapter<StudentRecyclerVie
 
     List<Student> studentsList;
     public StudentRecyclerViewAdapter(List<Student> studentsList) {
-        System.out.println(studentsList);
         this.studentsList = studentsList;
     }
 
