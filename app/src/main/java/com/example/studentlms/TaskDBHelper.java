@@ -96,9 +96,9 @@ public class TaskDBHelper extends SQLiteOpenHelper {
 
     public boolean isTaskAlreadyAdded(String rollNo, String currentDate) {
         SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT * FROM tasks";
-        // String[] selectionArgs = {String.valueOf(rollNo), currentDate};
-        Cursor cursor = db.rawQuery(query, null);
+        String query = "SELECT id FROM tasks WHERE rollNo = ? AND date = ?";
+        String[] selectionArgs = {String.valueOf(rollNo), currentDate};
+        Cursor cursor = db.rawQuery(query, selectionArgs);
         boolean taskExists = cursor.getCount() > 0;
         cursor.close();
         return taskExists;

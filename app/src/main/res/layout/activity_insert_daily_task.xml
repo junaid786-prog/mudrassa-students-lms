@@ -27,6 +27,16 @@
             android:textStyle="bold" />
 
         <EditText
+            android:id="@+id/edit_student_record_rollno"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:hint="Enter Roll No"
+            android:inputType="textPersonName" />
+
+        <EditText
             android:id="@+id/edit_student_record_sabaq"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
