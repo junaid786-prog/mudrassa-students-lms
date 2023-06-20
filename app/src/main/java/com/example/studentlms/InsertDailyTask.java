@@ -16,6 +16,7 @@ public class InsertDailyTask extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_daily_task);
 
+        db = new TaskDBHelper(this);
         String rollNo = "bsef20a511";
         Button insertStudentTask = findViewById(R.id.insert_student_task_btn);
         TextView sabaqView = findViewById(R.id.edit_student_record_sabaq);
@@ -28,7 +29,6 @@ public class InsertDailyTask extends AppCompatActivity {
                 String sabaqi = sabaqiView.getText().toString();
                 String manzal = manzalView.getText().toString();
                 String currentDate = db.getCurrentDate();
-
                 Task task = new Task(rollNo, sabaq, sabaqi, manzal, currentDate);
                 db.insertTask(task);
             }

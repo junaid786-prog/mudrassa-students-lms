@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.List;
 
 public class TaskDBHelper extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "students.db";
+    private static final String DATABASE_NAME = "tasks.db";
     private static final String TABLE_NAME = "tasks";
 
     private static final String COLUMN_ID = "id";
@@ -96,9 +96,9 @@ public class TaskDBHelper extends SQLiteOpenHelper {
 
     public boolean isTaskAlreadyAdded(String rollNo, String currentDate) {
         SQLiteDatabase db = getReadableDatabase();
-        String query = "SELECT id FROM tasks WHERE rollNo = ? AND date = ?";
-        String[] selectionArgs = {String.valueOf(rollNo), currentDate};
-        Cursor cursor = db.rawQuery(query, selectionArgs);
+        String query = "SELECT * FROM tasks";
+        // String[] selectionArgs = {String.valueOf(rollNo), currentDate};
+        Cursor cursor = db.rawQuery(query, null);
         boolean taskExists = cursor.getCount() > 0;
         cursor.close();
         return taskExists;

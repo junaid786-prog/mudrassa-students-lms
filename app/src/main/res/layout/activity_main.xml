@@ -37,7 +37,7 @@
             android:text="Insert Record" />
 
         <Button
-            android:id="@+id/student_record"
+            android:id="@+id/show_student_record_btn"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:text="Student Record" />
